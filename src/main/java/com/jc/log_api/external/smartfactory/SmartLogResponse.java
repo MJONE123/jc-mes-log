@@ -1,5 +1,6 @@
 package com.jc.log_api.external.smartfactory;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +12,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@Data
 public class SmartLogResponse {
-
+// 안씀 안씀안씀안씀안씀안씀안씀안씀안씀안씀안씀안씀안씀안씀안씀
     private SmartLogResult result;
 }

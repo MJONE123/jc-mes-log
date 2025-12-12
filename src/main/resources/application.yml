@@ -8,9 +8,12 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  # ✅ 테이블명 그대로 사용
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.SQLServerDialect
+      # dialect는 없어도 자동으로 SQLServerDialect 잡아주니까, 경고 없애려면 지워도 됨
+      # dialect: org.hibernate.dialect.SQLServerDialect
     show-sql: true
     open-in-view: false
 
