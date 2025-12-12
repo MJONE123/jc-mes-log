@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://10.53.8.10:1433;databaseName=JC_DEV;encrypt=true;trustServerCertificate=true
+    username: emf_user
+    password: Emes1234!@
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    open-in-view: false
+
+# 스마트공장 로그 API 설정
+smart-factory:
+  log:
+    url: https://log.smart-factory.kr/apisvc/sendLogData.json
+    crtfc-key: $5$API$oiQqQjAcFNXt0BevZ1mWhoJXEVuCwfps1caur/EUdc2
+
+# Swagger(springdoc-openapi) 설정
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    display-request-duration: true
+
+logging:
+  level:
+    root: INFO
+    com.jc.log_api: DEBUG
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
