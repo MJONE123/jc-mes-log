@@ -50,7 +50,7 @@ public class SmartLogBatchService {
                 SmartLogResult res = logClient.sendLog(req);
 
                 String cd = res.getRecptnRsltCd();
-                boolean success = "API001".equals(cd) || "API002".equals(cd);
+                boolean success = "AP1001".equals(cd) || "AP1002".equals(cd);
 
                 h.setSmartLogSendYn(success ? "Y" : "E");
                 h.setSmartLogSendDt(LocalDateTime.now());
