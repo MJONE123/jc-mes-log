@@ -10,18 +10,9 @@ import lombok.Setter;
 @Setter
 public class SmartLogRequest {
 
-    // YYYY-MM-DD HH:MM:SS.SSS
-    private String logDt;
-
-    // 접속 구분 코드 (D06001 ~ D06999)
-    private String useSe;
-
-    // 시스템 사용자 (MES user_id)
-    private String sysUser;
-
-    // 접속 IP
-    private String conectIp;
-
-    // 데이터 사용량(Byte) - 없으면 0
-    private int dataUsgqty;
+    private String logDt;       // YYYY-MM-DD HH:mm:ss
+    private String useSe;       // D06001 등
+    private String sysUser;     // MES 사용자 ID
+    private String conectIp;    // 접속 IP
+    private int dataUsgqty;     // Byte 단위 사용량 (없으면 0)
 }

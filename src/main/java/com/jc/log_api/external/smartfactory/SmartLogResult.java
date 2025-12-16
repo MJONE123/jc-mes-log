@@ -10,15 +10,8 @@ import lombok.Setter;
 @Setter
 public class SmartLogResult {
 
-    // 수신 일시
-    private String recptnDt;
-
-    // 수신 결과 코드 (API001 등)
-    private String recptnRsltCd;
-
-    // 수신 결과 설명
-    private String recptnRslt;
-
-    // 수신 결과 상세 설명
-    private String recptnRsltDtl;
+    private String recptnDt;       // 수신 일시
+    private String recptnRsltCd;   // 결과 코드 AP1002 등
+    private String recptnRslt;     // "데이터 이관 완료"
+    private String recptnRsltDtl;  // 상세 메시지
 }
