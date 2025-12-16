@@ -37,8 +37,10 @@ springdoc:
 
 logging:
   level:
-    root: INFO
-    com.jc.log_api: DEBUG
-    org.springframework.web: INFO
-    org.hibernate.SQL: DEBUG
+    root: INFO # 전체 로그 기본 INFO
+    com.jc.log_api: DEBUG # 프로젝트 패키지 DEBUG
+    org.springframework.web.client.RestTemplate: DEBUG #전송 로그를 실제로 보기 위한 추가
+    org.springframework.http.client: DEBUG #전송 로그를 실제로 보기 위한 추가
+    org.springframework.web: INFO # 스프링 Web은 INFO
+    org.hibernate.SQL: DEBUG # 실행되는 SQL 출력
     org.hibernate.type.descriptor.sql.BasicBinder: WARN
