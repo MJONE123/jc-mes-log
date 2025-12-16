@@ -18,7 +18,8 @@ import org.springframework.web.client.RestTemplate;
 public class SmartFactoryLogClient {
 
     private final SmartFactoryLogProperties props;
-    private final RestTemplate restTemplate = new RestTemplate();
+    // ✅ Config에서 만든 smartFactoryRestTemplate Bean 주입
+    private final RestTemplate smartFactoryRestTemplate;
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     /**
@@ -46,8 +47,8 @@ public class SmartFactoryLogClient {
         String url = props.getUrl();
 
         try {
-            // 4) API 호출
-            String responseJson = restTemplate.postForObject(
+            // 4) API 호출 (✅ 이제 Bean으로부터 주입받은 RestTemplate 사용)
+            String responseJson = smartFactoryRestTemplate.postForObject(
                     url,
                     httpEntity,
                     String.class
