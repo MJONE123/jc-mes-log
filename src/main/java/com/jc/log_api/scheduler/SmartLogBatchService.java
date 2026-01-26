@@ -56,7 +56,7 @@ public class SmartLogBatchService {
 
         // 1. 로그인 로그 전송 (아직 안 보낸 경우)
         if (currentStatus == null) {
-            SmartLogRequest req = toSmartLogRequest(h, "D06001", h.getLoginTime());
+            SmartLogRequest req = toSmartLogRequest(h, "DO6001", h.getLoginTime());
             SmartLogResult res = logClient.sendLog(req);
 
             if (!isSuccess(res)) {
@@ -71,7 +71,7 @@ public class SmartLogBatchService {
 
         // 2. 로그아웃 로그 전송 (로그아웃 시간이 존재할 때)
         if (h.getLogoutTime() != null) {
-            SmartLogRequest req = toSmartLogRequest(h, "D06002", h.getLogoutTime());
+            SmartLogRequest req = toSmartLogRequest(h, "DO6002", h.getLogoutTime());
             SmartLogResult res = logClient.sendLog(req);
 
             if (!isSuccess(res)) {
@@ -110,7 +110,7 @@ public class SmartLogBatchService {
 
     // 성공 여부 판단 헬퍼
     private boolean isSuccess(SmartLogResult res) {
-        return "AP1001".equals(res.getRecptnRsltCd()) || "AP1002".equals(res.getRecptnRsltCd());
+        return "AP1001".equals(res.getRecptnRsltCd()) || "AP1002".equals(res.getRecptnRsltCd()) || "AP1029".equals(res.getRecptnRsltCd());
     }
 
     // 에러 마킹 헬퍼
