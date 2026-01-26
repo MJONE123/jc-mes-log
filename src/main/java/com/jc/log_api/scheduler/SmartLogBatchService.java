@@ -29,7 +29,7 @@ public class SmartLogBatchService {
     private static final DateTimeFormatter LOG_DT_FORMATTER =
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS");
 
-    @Scheduled(fixedDelay = 60_000)
+    @Scheduled(fixedDelay = 600_000)
     @Transactional
     public void sendLogs() { // 메서드명 변경 (LoginLogs -> Logs)
 
