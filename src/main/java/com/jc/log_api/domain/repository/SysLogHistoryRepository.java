@@ -21,7 +21,7 @@ public interface SysLogHistoryRepository extends JpaRepository<SysLogHistory, St
                   OR 
                   (smart_log_send_yn = 'L' AND logout_time IS NOT NULL)
               )
-              AND log_type IN ('BROWSER', 'FORM')
+              AND log_type = 'FORM'
               AND login_time IS NOT NULL
             ORDER BY login_time
             """, nativeQuery = true)
